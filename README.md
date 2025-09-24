@@ -161,13 +161,6 @@ Analyze receptor-ligand or protein-protein interaction interfaces.
 - `server/804vis.py`: Chinese version MCP server
 - `server/804vis_en.py`: English version MCP server
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## 📄 License
 
@@ -179,13 +172,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Model Context Protocol (MCP) framework
 - Claude Desktop integration platform
 - [ChatMol/molecule-mcp](https://github.com/ChatMol/molecule-mcp) - PyMOL-MCP bridge implementation
+- Special thanks to Kevin (GitHub: skblnw) for his invaluable support and guidance during the development of this project.
 
 ## 📞 Support
 
-If you encounter any issues or have questions, please:
-1. Check the [troubleshooting guide](docs/troubleshooting.md)
-2. Open an issue on GitHub
-3. Refer to the documentation in the `docs/` directory
+If you encounter any issues or have questions, please open an issue on GitHub.
 
 ---
-**Made with ❤️ for the structural biology community**
