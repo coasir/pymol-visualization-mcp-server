@@ -1,8 +1,17 @@
 {
   "mcpServers": {
+    "pymol": {
+      "command": "/PATH/TO/YOUR/MCP",
+      "args": [
+        "run",
+        "/PATH/TO/molecule-mcp/pymol_server.py"
+      ]
+    },
     "pymol-visualization": {
       "command": "/PATH/TO/YOUR/PYTHON",
-      "args": ["/PATH/TO/THIS/SERVER/804vis_en.py"],
+      "args": [
+        "/PATH/TO/THIS/SERVER/804vis_en.py"
+      ],
       "env": {}
     }
   }

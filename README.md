@@ -23,8 +23,8 @@ An automated protein structure visualization tool based on the Model Context Pro
 - **Python**: 3.8 or higher
 - **PyMOL**: Latest version
 - **MCP**: 1.0.0 or higher
-- **PyMOL-MCP**: Bridge between Claude Desktop and PyMOL
 - **Claude Desktop**: Latest version
+- **PyMOL-MCP Server**: [ChatMol/molecule-mcp](https://github.com/ChatMol/molecule-mcp) (separate setup required)
 
 ## 🚀 Installation
 
@@ -39,31 +39,60 @@ cd pymol-visualization-mcp-server
 pip install -r requirements.txt
 ```
 
-**Important**: This will install `pymol-mcp` ([ChatMol/molecule-mcp](https://github.com/ChatMol/molecule-mcp)), which is the bridge that enables Claude Desktop to communicate with PyMOL via the MCP protocol.
 
-### 3. Configure Claude Desktop
+
+### 3. Setup PyMOL-MCP Server
+
+**Important**: You need to set up the PyMOL-MCP bridge from [ChatMol/molecule-mcp](https://github.com/ChatMol/molecule-mcp) first:
+
+1. Clone the molecule-mcp repository:
+   ```bash
+   git clone https://github.com/ChatMol/molecule-mcp.git
+   ```
+
+2. Follow the installation instructions in the molecule-mcp repository
+
+### 4. Configure Claude Desktop
 
 1. Open Claude Desktop
 2. Navigate to **Settings** → **Developer** → **Edit Config**
 3. Find the file named `claude_desktop_config.json`
-4. Add the configuration:
+4. Add both servers to your configuration:
 
 ```json
 {
   "mcpServers": {
+    "pymol": {
+      "command": "/PATH/TO/YOUR/MCP",
+      "args": [
+        "run",
+        "/PATH/TO/molecule-mcp/pymol_server.py"
+      ]
+    },
     "pymol-visualization": {
       "command": "/PATH/TO/YOUR/PYTHON",
-      "args": ["/PATH/TO/THIS/SERVER/804vis_en.py"],
+      "args": [
+        "/PATH/TO/THIS/SERVER/804vis_en.py"
+      ],
       "env": {}
     }
   }
 }
 ```
 
-5. Replace paths with your actual Python interpreter and script locations
+5. Replace paths with your actual paths:
+   - `/PATH/TO/YOUR/MCP`: Path to your MCP executable
+   - `/PATH/TO/molecule-mcp/pymol_server.py`: Path to the cloned molecule-mcp server
+   - `/PATH/TO/YOUR/PYTHON`: Path to your Python interpreter
+   - `/PATH/TO/THIS/SERVER/804vis_en.py`: Path to this visualization server
+
 6. Save and restart Claude Desktop
 
 ## 💡 Usage
+
+**Prerequisites**: Ensure both MCP servers are properly configured:
+- `pymol` (from molecule-mcp) - provides basic PyMOL control
+- `pymol-visualization` (this project) - provides advanced visualization templates
 
 ### Step 1: Launch PyMOL in Remote Mode
 ```bash

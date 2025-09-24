@@ -48,63 +48,81 @@ Download from [PyMOL.org](https://pymol.org/) if you have a license.
 git clone https://github.com/coasir/pymol-visualization-mcp-server.git
 cd pymol-visualization-mcp-server
 
-# Install Python dependencies (includes pymol-mcp bridge)
+# Install Python dependencies
 pip install -r requirements.txt
 ```
 
-#### About PyMOL-MCP Bridge
-The `pymol-mcp` package ([ChatMol/molecule-mcp](https://github.com/ChatMol/molecule-mcp)) is essential for this project as it:
-- Provides the communication layer between Claude Desktop and PyMOL
-- Implements the MCP (Model Context Protocol) for PyMOL integration
-- Enables remote control of PyMOL from Claude Desktop
-- Handles command translation and error management
+### 3. Setup PyMOL-MCP Server
 
-**Installation**: The package will be automatically installed via `pip install -r requirements.txt`, but you can also install it separately:
-```bash
-pip install pymol-mcp
-```
+**Critical Requirement**: You must set up the PyMOL-MCP bridge first:
 
-### 3. Configure Claude Desktop
+1. **Clone molecule-mcp repository**:
+   ```bash
+   git clone https://github.com/ChatMol/molecule-mcp.git
+   cd molecule-mcp
+   ```
 
-#### Step 3.1: Locate Configuration File
+2. **Install molecule-mcp dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Follow molecule-mcp setup instructions** from their repository
+
+### 4. Configure Claude Desktop
+
+#### Step 4.1: Locate Configuration File
 1. Open Claude Desktop
 2. Go to **Settings** → **Developer** → **Edit Config**
 3. This opens `claude_desktop_config.json`
 
-#### Step 3.2: Add MCP Server Configuration
+#### Step 4.2: Add Both MCP Servers
 
-Copy the example configuration from `config/claude_desktop_config_example.json`:
+You need to configure **both** servers in your `claude_desktop_config.json`:
 
 ```json
 {
   "mcpServers": {
+    "pymol": {
+      "command": "/usr/bin/mcp",
+      "args": [
+        "run",
+        "/full/path/to/molecule-mcp/pymol_server.py"
+      ]
+    },
     "pymol-visualization": {
       "command": "/usr/bin/python3",
-      "args": ["/full/path/to/pymol-visualization-mcp-server/server/804vis_en.py"],
+      "args": [
+        "/full/path/to/pymol-visualization-mcp-server/server/804vis_en.py"
+      ],
       "env": {}
     }
   }
 }
 ```
 
-#### Step 3.3: Update Paths
+#### Step 4.3: Update Paths
 
-**Find your Python path:**
+**Find your paths:**
 ```bash
+# Find MCP executable path
+which mcp
+# Example output: /usr/bin/mcp or /Library/Frameworks/Python.framework/Versions/3.12/bin/mcp
+
+# Find Python path
 which python3
 # Example output: /usr/bin/python3
+
+# Get full paths to repositories
+pwd  # Run this in molecule-mcp directory
+pwd  # Run this in pymol-visualization-mcp-server directory
 ```
 
-**Get full script path:**
-```bash
-pwd
-# From inside the cloned repository
-# Example: /Users/username/pymol-visualization-mcp-server
-```
-
-**Update the configuration:**
+**Update the configuration with your actual paths:**
+- Replace `/usr/bin/mcp` with your MCP executable path
+- Replace `/full/path/to/molecule-mcp/pymol_server.py` with actual path
 - Replace `/usr/bin/python3` with your Python path
-- Replace the args path with your full script path
+- Replace `/full/path/to/pymol-visualization-mcp-server/server/804vis_en.py` with actual path
 
 ### 4. Verify Installation
 

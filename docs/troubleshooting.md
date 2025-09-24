@@ -219,21 +219,38 @@ This guide helps you resolve common issues when using the PyMOL Visualization MC
 pip install mcp>=1.0.0
 ```
 
-### "No module named 'pymol_mcp'" or PyMOL-MCP Issues
+### PyMOL-MCP Bridge Issues
 
-**Solution**:
-```bash
-# Install the PyMOL-MCP bridge
-pip install pymol-mcp
+**Symptoms**:
+- "pymol" server not appearing in Claude Desktop
+- PyMOL commands not working
+- "Connection to PyMOL failed" errors
 
-# Or reinstall if already installed
-pip uninstall pymol-mcp
-pip install pymol-mcp
-```
+**Solutions**:
+1. **Verify molecule-mcp setup**:
+   ```bash
+   # Check if molecule-mcp is properly cloned
+   ls -la /path/to/molecule-mcp/pymol_server.py
+   
+   # Test the server directly
+   cd /path/to/molecule-mcp
+   python pymol_server.py
+   ```
+
+2. **Check MCP executable path**:
+   ```bash
+   which mcp
+   # Ensure this matches your config file
+   ```
+
+3. **Verify both servers in config**:
+   - Ensure both "pymol" and "pymol-visualization" are configured
+   - Check JSON syntax is correct
+   - Verify all paths are absolute and correct
 
 **Additional Resources**:
 - [ChatMol/molecule-mcp Repository](https://github.com/ChatMol/molecule-mcp)
-- Check the molecule-mcp documentation for specific configuration issues
+- Check the molecule-mcp documentation for specific setup issues
 
 ### "Permission denied"
 
