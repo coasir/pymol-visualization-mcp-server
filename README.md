@@ -176,6 +176,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-If you encounter any issues or have questions, please open an issue on GitHub.
-
+If you encounter any issues or have questions, please:
+1. Check the [troubleshooting guide](docs/troubleshooting.md)
+2. Open an issue on GitHub
+3. Refer to the documentation in the `docs/` directory
+   
+💗
 ---
