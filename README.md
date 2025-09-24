@@ -23,6 +23,7 @@ An automated protein structure visualization tool based on the Model Context Pro
 - **Python**: 3.8 or higher
 - **PyMOL**: Latest version
 - **MCP**: 1.0.0 or higher
+- **PyMOL-MCP**: Bridge between Claude Desktop and PyMOL
 - **Claude Desktop**: Latest version
 
 ## 🚀 Installation
@@ -37,6 +38,8 @@ cd pymol-visualization-mcp-server
 ```bash
 pip install -r requirements.txt
 ```
+
+**Important**: This will install `pymol-mcp` ([ChatMol/molecule-mcp](https://github.com/ChatMol/molecule-mcp)), which is the bridge that enables Claude Desktop to communicate with PyMOL via the MCP protocol.
 
 ### 3. Configure Claude Desktop
 
@@ -146,6 +149,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - PyMOL molecular visualization system
 - Model Context Protocol (MCP) framework
 - Claude Desktop integration platform
+- [ChatMol/molecule-mcp](https://github.com/ChatMol/molecule-mcp) - PyMOL-MCP bridge implementation
 
 ## 📞 Support
 

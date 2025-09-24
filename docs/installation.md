@@ -45,11 +45,23 @@ Download from [PyMOL.org](https://pymol.org/) if you have a license.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/pymol-visualization-mcp-server.git
+git clone https://github.com/coasir/pymol-visualization-mcp-server.git
 cd pymol-visualization-mcp-server
 
-# Install Python dependencies
+# Install Python dependencies (includes pymol-mcp bridge)
 pip install -r requirements.txt
+```
+
+#### About PyMOL-MCP Bridge
+The `pymol-mcp` package ([ChatMol/molecule-mcp](https://github.com/ChatMol/molecule-mcp)) is essential for this project as it:
+- Provides the communication layer between Claude Desktop and PyMOL
+- Implements the MCP (Model Context Protocol) for PyMOL integration
+- Enables remote control of PyMOL from Claude Desktop
+- Handles command translation and error management
+
+**Installation**: The package will be automatically installed via `pip install -r requirements.txt`, but you can also install it separately:
+```bash
+pip install pymol-mcp
 ```
 
 ### 3. Configure Claude Desktop

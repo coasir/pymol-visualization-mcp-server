@@ -1,6 +1,11 @@
 # MCP Server dependencies
 mcp>=1.0.0
 
+# PyMOL MCP Server integration (required)
+# This connects Claude Desktop to PyMOL via MCP protocol
+# Repository: https://github.com/ChatMol/molecule-mcp
+pymol-mcp
+
 # Optional: PyMOL integration (if installing PyMOL via pip)
 # Note: PyMOL is typically installed separately via conda or package manager
 # pymol-open-source
