@@ -1,0 +1,86 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# PyMOL specific
+*.pse
+*.psw
+*.pml
+*.wrl
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Configuration files (containing sensitive paths)
+claude_desktop_config.json
+config.json
+
+# Test outputs
+test_outputs/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.svg
+
+# Except example images
+!examples/**/images/*.png
+!examples/**/images/*.jpg
+!examples/**/images/*.jpeg
+!examples/**/images/*.gif
+!examples/**/images/*.svg
+
+# Documentation builds
+docs/_build/
+docs/build/
+
+# Backup files
+*.bak
+*.backup

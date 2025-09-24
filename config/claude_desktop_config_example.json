@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "pymol-visualization": {
+      "command": "/PATH/TO/YOUR/PYTHON",
+      "args": ["/PATH/TO/THIS/SERVER/804vis_en.py"],
+      "env": {}
+    }
+  }
+}

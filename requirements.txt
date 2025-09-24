@@ -1,0 +1,10 @@
+# MCP Server dependencies
+mcp>=1.0.0
+
+# Optional: PyMOL integration (if installing PyMOL via pip)
+# Note: PyMOL is typically installed separately via conda or package manager
+# pymol-open-source
+
+# Development and testing
+pytest>=7.0.0
+pytest-asyncio>=0.21.0
