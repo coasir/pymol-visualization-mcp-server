@@ -77,6 +77,13 @@ test_outputs/
 !examples/**/images/*.gif
 !examples/**/images/*.svg
 
+# Except documentation images
+!docs/**/images/*.png
+!docs/**/images/*.jpg
+!docs/**/images/*.jpeg
+!docs/**/images/*.gif
+!docs/**/images/*.svg
+
 # Documentation builds
 docs/_build/
 docs/build/
