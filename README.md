@@ -122,6 +122,11 @@ Analyze receptor-ligand or protein-protein interaction interfaces.
 - `Key_residues`: Specify residues (e.g., `A:57,B:102`)
 - `Distance_pairs`: Define distance measurements (e.g., `57:CA-102:CA`)
 
+### Workflow Overview
+The following diagram illustrates the complete workflow for using the visualization templates in Claude Desktop:
+
+![Workflow Diagram](docs/images/workflow.png)
+
 ## 📊 Examples
 
 ### Single Component Analysis
